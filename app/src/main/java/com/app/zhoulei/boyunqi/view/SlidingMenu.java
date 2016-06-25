@@ -106,14 +106,14 @@ public class SlidingMenu extends HorizontalScrollView {
                 break;
             case MotionEvent.ACTION_UP:
                 if( !boo ){
-                    if((ev.getX()-downX)>250){
+                    if((ev.getX()-downX)>150){
                         this.smoothScrollTo(0,0);
                         boo=true;
                     }else{
                         this.smoothScrollTo(mMenuWidth,0);
                     }
                 }else{
-                    if((downX-ev.getX())>250){
+                    if((downX-ev.getX())>150){
                         this.smoothScrollTo(mMenuWidth,0);
                         boo=false;
                     }else{

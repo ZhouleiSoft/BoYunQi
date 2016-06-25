@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,9 +21,9 @@ public class MainActivity extends Activity {
     private FragmentArticle fragmentArctic;
     private FragmentGamble fragmentGamble;
 
-    private TextView textArctic;
-    private TextView textGamble;
-    private TextView textMore;
+    private ImageView imageArctic;
+    private ImageView imageGamble;
+    private ImageView imageMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +41,12 @@ public class MainActivity extends Activity {
     }
 
     private void initView(){
-        textArctic = (TextView) findViewById(R.id.text_arctic);
-        textArctic.setOnClickListener(itemClick);
-        textGamble = (TextView) findViewById(R.id.text_gamble);
-        textGamble.setOnClickListener(itemClick);
-        textMore= (TextView) findViewById(R.id.text_more);
-        textMore.setOnClickListener(itemClick);
+        imageArctic = (ImageView) findViewById(R.id.image_arctic);
+        imageArctic.setOnClickListener(itemClick);
+        imageGamble = (ImageView) findViewById(R.id.image_gamble);
+        imageGamble.setOnClickListener(itemClick);
+        imageMore= (ImageView) findViewById(R.id.image_more);
+        imageMore.setOnClickListener(itemClick);
 
     }
 
@@ -57,32 +58,32 @@ public class MainActivity extends Activity {
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             switch (view.getId()){
-                case R.id.text_arctic:
+                case R.id.image_arctic:
                     if(fragmentArctic == null){
                         fragmentArctic = new FragmentArticle();
                     }
                     transaction.replace(R.id.layout_list,fragmentArctic);
-                    textArctic.setBackgroundColor(0XFFE4BA3F);
-                    textGamble.setBackgroundColor(0xffffffff);
-                    textMore.setBackgroundColor(0xffffffff);
+                    imageArctic.setBackgroundColor(0XFFE4BA3F);
+                    imageGamble.setBackgroundColor(0xffffffff);
+                    imageMore.setBackgroundColor(0xffffffff);
                     break;
-                case R.id.text_gamble:
+                case R.id.image_gamble:
                     if(fragmentGamble == null){
                         fragmentGamble = new FragmentGamble();
                     }
                     transaction.replace(R.id.layout_list,fragmentGamble);
-                    textArctic.setBackgroundColor(0xffffffff);
-                    textGamble.setBackgroundColor(0XFFE4BA3F);
-                    textMore.setBackgroundColor(0xffffffff);
+                    imageArctic.setBackgroundColor(0xffffffff);
+                    imageGamble.setBackgroundColor(0XFFE4BA3F);
+                    imageMore.setBackgroundColor(0xffffffff);
                     break;
-                case R.id.text_more:
+                case R.id.image_more:
                     if(fragmentMore == null){
                         fragmentMore = new FragmentMore();
                     }
                     transaction.replace(R.id.layout_list,fragmentMore);
-                    textArctic.setBackgroundColor(0xffffffff);
-                    textGamble.setBackgroundColor(0xffffffff);
-                    textMore.setBackgroundColor(0XFFE4BA3F);
+                    imageArctic.setBackgroundColor(0xffffffff);
+                    imageGamble.setBackgroundColor(0xffffffff);
+                    imageMore.setBackgroundColor(0XFFE4BA3F);
                     break;
                 default:
                     break;
